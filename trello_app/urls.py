@@ -5,7 +5,7 @@ app_name = "trello_app"
 
 urlpatterns = [
   path('', views.index, name='index'),
-  path('home/', views.home, name="home"),
+  path('home/', views.HomeView.as_view(), name="home"),
   path('signup/', views.signup, name="signup"),
   path('users/<int:pk>/',views.UserDetailView.as_view(), name="users_detail"),
   path('users/<int:pk>/update/',views.UserUpdateView.as_view(), name="users_update"),
@@ -19,5 +19,5 @@ urlpatterns = [
   path('cards/<int:pk>/', views.CardDetailView.as_view(), name="cards_detail"),
   path('cards/<int:pk>/update', views.CardUpdateView.as_view(), name="cards_update"),
   path('cards/<int:pk>/delete', views.CardDeleteView.as_view(), name="cards_delete"),
-  
+  path('cards/craete/<int:list_pk>', views.CardCreateFromHomeView.as_view(), name="cards_create_from_home")
 ] 
