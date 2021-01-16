@@ -9,7 +9,7 @@ class UserForm(forms.ModelForm):
       field.widget.attrs['class'] = 'form-control'
   class Meta:
     model = User
-    fields = ("username", "last_name", "first_name", "email",)
+    fields = ("username", "last_name", "first_name")
 
 
 class ListForm(forms.ModelForm):

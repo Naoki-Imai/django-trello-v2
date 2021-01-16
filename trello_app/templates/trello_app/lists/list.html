@@ -3,6 +3,7 @@
 {% block content %}
 <div class="container">
   <h1>リスト一覧</h1>
+  <a class="btn btn-primary my-3" href="{% url 'trello_app:lists_create' %}" role="button">作成</a>
   <div class="card-columns">
     {% for list in list_list %}
     <a href="{% url 'trello_app:lists_detail' list.pk %}" class="card">
